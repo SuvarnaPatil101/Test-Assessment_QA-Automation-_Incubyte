@@ -1,0 +1,13 @@
+Feature: User Signup Flow
+
+  Scenario: Successful signup with valid details
+    Given I am on the signup page
+    When I fill in the form with valid details
+    And I click the "Create an Account" button
+    Then I should be redirected to the dashboard
+
+  Scenario: Signup with already registered email
+    Given I am on the signup page
+    When I fill in the form with an existing email
+    And I click the "Create an Account" button
+    Then I should see an error message "Email is already registered"
